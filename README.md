@@ -11,6 +11,8 @@ Unifier is the control plane that connects active Infinity repositories without 
 - A conversation-to-robot constructor with stable identity and explicit permissions.
 - Hard gates for claim verification, merges, spending, manufacturing, and physical actuation.
 - A truthful proposed-reserved ledger record for the 50,000,000 Infinity China robot-factory project.
+- An AI Error Memory that retrieves similar failures, diagnoses repeated corrections, and prepares cross-repository repair notifications.
+- A required app-first release policy for phone interaction.
 
 ## Operating loop
 
@@ -23,6 +25,16 @@ Unifier is the control plane that connects active Infinity repositories without 
 7. Open draft changes and run tests automatically.
 8. Require recorded authorization before verifying claims, merging, spending, manufacturing, or operating hardware.
 9. Feed measurements and failures back into the robot's history for the next pass.
+
+## AI Error Memory
+
+An error is stored as reusable operating knowledge rather than a temporary bug report. Its record includes the original conditions, expected and actual behavior, affected repositories, evidence, prior correction commits, the conditional reason for each correction, recurrence count, root-cause status, repair actions, and regression tests.
+
+When a repository scan finds a similar condition, the Error Memory creates a repair notification for each affected repository. The robot must reproduce the condition, identify the root cause, and add a regression test before preparing a draft repair pull request. A returned failure is diagnosed as a recurrence; the robot does not repeat the same symptom-level patch and call it fixed.
+
+## App-first contract
+
+Infinity products are treated as applications whose primary interaction must work on phones. Production-ready status requires phone viewport, touch-target, safe-area, software-keyboard, back-navigation, state-restoration, loading/offline, portrait, and landscape checks. A failed check becomes a new Error Memory case so the lesson can protect the rest of the repository network.
 
 ## Reader geometry
 
