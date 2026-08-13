@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "owner": "www-infinity4",
+  "pageSize": 100,
+  "pagination": "continue-until-page-is-short-or-provider-says-no-next-page",
+  "repositoryLimit": null,
+  "includeArchived": false,
+  "manifestPath": "infinity-project.manifest.json",
+  "scanOrder": [
+    "inventory",
+    "manifest",
+    "app-first",
+    "error-memory",
+    "commit-conditions",
+    "research-evidence"
+  ],
+  "writes": {
+    "mayCreateNotification": true,
+    "mayPrepareBranch": true,
+    "mayOpenDraftPullRequest": true,
+    "mayMerge": false
+  }
+}
