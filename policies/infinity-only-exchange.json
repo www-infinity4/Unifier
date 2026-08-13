@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "policy": "infinity-only-exchange",
+  "scope": "all-active-repositories",
+  "exchangeUnit": "Infinity or an Infinity-derived service coin",
+  "outsidePaymentProvidersAllowed": false,
+  "outsideMoneyCheckoutAllowed": false,
+  "bankConnectionAllowed": false,
+  "requirements": [
+    "Every purchase, bid, unlock, payout, and service request posts to an Infinity ledger.",
+    "A derived product coin must record its Infinity source and service purpose.",
+    "Repository scans must include generated dependency metadata and user-visible copy.",
+    "A failed scan creates a bounded repair job and a regression check.",
+    "No robot may claim a browser-local prototype is a shared authenticated ledger."
+  ]
+}
