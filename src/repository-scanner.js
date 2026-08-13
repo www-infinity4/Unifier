@@ -99,7 +99,7 @@ export function createRepositoryScanJobs(inventory) {
         defaultBranch: classified.defaultBranch,
         manifestPath: classified.manifestPath,
         categories: classified.categories,
-        scans: ["manifest", "app-first", "error-memory", "commit-conditions", "research-evidence"],
+        scans: ["manifest", "app-first", "infinity-only-exchange", "error-memory", "commit-conditions", "research-evidence"],
         permissions: { mayOpenDraftPullRequest: true, mayMerge: false }
       };
     });
