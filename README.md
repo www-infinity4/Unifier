@@ -13,6 +13,7 @@ Unifier is the control plane that connects active Infinity repositories without 
 - A truthful proposed-reserved ledger record for the 50,000,000 Infinity China robot-factory project.
 - An AI Error Memory that retrieves similar failures, diagnoses repeated corrections, and prepares cross-repository repair notifications.
 - A required app-first release policy for phone interaction.
+- An Infinity-only exchange gate that rejects outside checkout, cash-price, and bank-transfer paths.
 - An uncapped paginated repository inventory scanner, tested beyond GitHub's 100-result page size.
 - A commit-condition scanner that records why a commit existed and detects repeated conditions.
 
@@ -58,7 +59,9 @@ The next production slice is a repository inventory adapter, manifest schema, pe
 
 The inventory scanner requests at most 100 repositories per provider page, then continues page by page until the provider returns a short page or explicitly reports that no next page exists. It deduplicates by full repository name and has no configured total-repository limit. The connected `www-infinity4` inventory contained 176 repositories when this slice was built: 100 on page one and 76 on page two.
 
-Every active repository receives jobs for its manifest, app-first behavior, matching Error Memory cases, commit conditions, and research-evidence state. Names and metadata can identify a repository as science or prototyping work, but that classification never marks its scientific claims as verified.
+Every active repository receives jobs for its manifest, app-first behavior, Infinity-only exchange behavior, matching Error Memory cases, commit conditions, and research-evidence state. Names and metadata can identify a repository as science or prototyping work, but that classification never marks its scientific claims as verified.
+
+The Infinity-only exchange scanner checks application source, user-visible copy, configuration, and generated dependency metadata. Any outside checkout or bank-transfer path becomes a blocking repair job. The required replacement is an Infinity ledger transfer or an Infinity-derived service coin with its source and purpose recorded. Browser-local demonstrations must remain labeled as prototypes rather than shared authenticated ledgers.
 
 The commit-condition scanner recognizes structured `Infinity-Condition`, `Infinity-Expected`, `Infinity-Actual`, `Infinity-Reason`, `Infinity-Component`, `Infinity-Error`, and `Infinity-Test` trailers. Older commits without these records are assigned low confidence and a context-recovery notification. When the same conditional signature appears in later commits, the scanner requires root-cause review and a regression test rather than authorizing another blind patch.
 
