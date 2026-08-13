@@ -1,0 +1,80 @@
+[
+  {
+    "schemaVersion": "1.0",
+    "id": "error-app-first-phone-interaction",
+    "title": "Phone product behaves like a compressed desktop webpage",
+    "status": "open",
+    "conditions": {
+      "platform": "mobile web app",
+      "formFactor": "phone",
+      "interaction": "touch",
+      "component": "application shell",
+      "route": "any"
+    },
+    "symptom": "Controls, navigation, or content do not present correctly during phone interaction.",
+    "expected": "The product behaves as a coherent phone app with reliable touch, navigation, state, loading, and keyboard behavior.",
+    "actual": "Desktop-page assumptions cause clipped, hidden, overlapping, delayed, or state-losing interaction.",
+    "evidence": [],
+    "affectedRepositories": [],
+    "priorAttempts": [],
+    "recurrence": {"count": 1, "signature": "app-first-phone-interaction", "lastSeenAt": null},
+    "rootCause": {"status": "pattern", "explanation": "Phone behavior was treated as responsive styling instead of a required application contract."},
+    "repair": {
+      "actions": ["apply app-first policy", "test real interaction states", "store failure conditions"],
+      "acceptanceTests": ["all app-first checks pass", "no input is lost during keyboard, background, retry, or back navigation"]
+    },
+    "notifications": []
+  },
+  {
+    "schemaVersion": "1.0",
+    "id": "error-repeated-patch-without-condition",
+    "title": "A previously corrected failure returns",
+    "status": "open",
+    "conditions": {
+      "platform": "any",
+      "formFactor": "any",
+      "interaction": "any",
+      "component": "previously changed component",
+      "route": "any"
+    },
+    "symptom": "The same or materially similar failure returns after a corrective commit.",
+    "expected": "The correction addresses the root condition and contains a regression test.",
+    "actual": "A symptom-level patch passed once but the triggering condition remained.",
+    "evidence": [],
+    "affectedRepositories": [],
+    "priorAttempts": [],
+    "recurrence": {"count": 2, "signature": "repeated-patch-without-condition", "lastSeenAt": null},
+    "rootCause": {"status": "unknown", "explanation": "Conditional reasons and recurrence conditions must be reconstructed from commit history and tests."},
+    "repair": {
+      "actions": ["compare original and repeated conditions", "identify shared root cause", "write regression test before replacement patch"],
+      "acceptanceTests": ["original reproduction fails before fix", "both original and recurrence cases pass after fix"]
+    },
+    "notifications": []
+  },
+  {
+    "schemaVersion": "1.0",
+    "id": "error-ai-requirement-drift",
+    "title": "AI output loses or changes the requested behavior",
+    "status": "open",
+    "conditions": {
+      "platform": "AI development pass",
+      "formFactor": "any",
+      "interaction": "conversation to code",
+      "component": "requirements",
+      "route": "reader-writer-builder"
+    },
+    "symptom": "A later AI pass omits, weakens, or changes a requirement from the source conversation.",
+    "expected": "The original request remains traceable through implementation and tests.",
+    "actual": "The output appears polished but no longer performs the exact requested action.",
+    "evidence": [],
+    "affectedRepositories": ["www-infinity4/Unifier"],
+    "priorAttempts": [],
+    "recurrence": {"count": 1, "signature": "ai-requirement-drift", "lastSeenAt": null},
+    "rootCause": {"status": "pattern", "explanation": "Refinement occurred without a source-to-requirement-to-test trace."},
+    "repair": {
+      "actions": ["run previous-pass error catcher", "create requirement IDs", "link each requirement to an acceptance test"],
+      "acceptanceTests": ["every required source statement maps to implementation or an explicit unresolved decision"]
+    },
+    "notifications": []
+  }
+]

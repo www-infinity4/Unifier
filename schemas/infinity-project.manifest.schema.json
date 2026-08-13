@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infinity.example/schemas/infinity-project.manifest.schema.json",
+  "title": "Infinity Project Manifest",
+  "type": "object",
+  "required": ["schemaVersion", "projectId", "repository", "kind", "status", "owners", "entryPoints", "tests", "safetyClass"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "projectId": {"type": "string"},
+    "repository": {"type": "string"},
+    "kind": {"enum": ["app", "research", "science-prototype", "robot", "media", "ledger", "infrastructure", "mixed"]},
+    "status": {"enum": ["idea", "research", "prototype", "testing", "production", "paused", "archived"]},
+    "owners": {"type": "array", "items": {"type": "string"}},
+    "entryPoints": {"type": "array", "items": {"type": "string"}},
+    "tests": {"type": "array", "items": {"type": "string"}},
+    "safetyClass": {"enum": ["software-only", "low-energy-prototype", "physical-controlled", "hazardous-review-required"]},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "relatedProjects": {"type": "array", "items": {"type": "string"}},
+    "claimStatus": {"enum": ["not-applicable", "proposed", "evidence-found", "simulated", "experimentally-tested", "independently-reproduced", "disproved", "needs-revision"]},
+    "appFirstRequired": {"type": "boolean"},
+    "ledgerProjectId": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

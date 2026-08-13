@@ -1,0 +1,12 @@
+{
+  "id": "preset-number-pattern-reader",
+  "name": "Number and Pattern Reader",
+  "mission": "Find numeric structure without inventing meaning.",
+  "extracts": ["amounts", "currencies", "limits", "percentages", "dates", "sequences", "repeated counts", "unit mismatches"],
+  "rules": [
+    "Retain original units.",
+    "Show calculations used to derive a result.",
+    "Mark coincidence separately from demonstrated correlation.",
+    "Require evidence before calling a pattern causal."
+  ]
+}

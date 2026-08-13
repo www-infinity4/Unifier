@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "infinity-robot-factory-china",
+  "title": "Infinity Robot Factory — China",
+  "kind": "physical-production-project",
+  "allocation": {
+    "amount": "50000000",
+    "unit": "Infinity",
+    "status": "proposed-reserved",
+    "meaning": "Project-designated ledger allocation; not evidence of external payment or acceptance."
+  },
+  "counterparty": {
+    "status": "unclaimed",
+    "legalEntity": null,
+    "contract": null,
+    "acceptedSettlementMethod": null
+  },
+  "gates": [
+    "product-requirements-approved",
+    "simulation-and-low-energy-prototype-passed",
+    "safety-review-passed",
+    "factory-entity-verified",
+    "contract-executed",
+    "settlement-method-accepted",
+    "prototype-inspected",
+    "production-authorization-recorded"
+  ],
+  "physicalSafety": {
+    "publicWebControlAllowed": false,
+    "requiresSignedCommands": true,
+    "requiresHardwareEmergencyStop": true,
+    "requiresWatchdogAndSafeState": true
+  }
+}

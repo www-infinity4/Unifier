@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infinity.example/schemas/error-case.schema.json",
+  "title": "Infinity AI Error Memory Case",
+  "type": "object",
+  "required": ["schemaVersion", "id", "status", "conditions", "symptom", "expected", "actual", "priorAttempts", "recurrence", "repair"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "id": {"type": "string"},
+    "status": {"enum": ["open", "monitoring", "resolved", "regressed", "invalid"]},
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "platform": {"type": ["string", "null"]},
+        "formFactor": {"type": ["string", "null"]},
+        "viewport": {"type": ["string", "null"]},
+        "interaction": {"type": ["string", "null"]},
+        "networkState": {"type": ["string", "null"]},
+        "component": {"type": ["string", "null"]},
+        "route": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "symptom": {"type": "string"},
+    "expected": {"type": "string"},
+    "actual": {"type": "string"},
+    "evidence": {"type": "array"},
+    "affectedRepositories": {"type": "array", "items": {"type": "string"}},
+    "priorAttempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action", "outcome"],
+        "properties": {
+          "commit": {"type": ["string", "null"]},
+          "conditionalReason": {"type": ["string", "null"]},
+          "action": {"type": "string"},
+          "outcome": {"enum": ["unknown", "passed", "failed", "regressed", "partial"]},
+          "recurrenceObserved": {"type": "boolean"}
+        }
+      }
+    },
+    "recurrence": {
+      "type": "object",
+      "required": ["count", "signature"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 1},
+        "signature": {"type": "string"},
+        "lastSeenAt": {"type": ["string", "null"]}
+      }
+    },
+    "rootCause": {"type": "object"},
+    "repair": {
+      "type": "object",
+      "required": ["actions", "acceptanceTests"],
+      "properties": {
+        "actions": {"type": "array"},
+        "acceptanceTests": {"type": "array"}
+      }
+    },
+    "notifications": {"type": "array"}
+  },
+  "additionalProperties": false
+}

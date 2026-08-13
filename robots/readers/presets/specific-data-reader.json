@@ -1,0 +1,12 @@
+{
+  "id": "preset-specific-data-reader",
+  "name": "Specific Data Reader",
+  "mission": "Search for a declared target and return only traceable matches.",
+  "inputs": ["targetFields", "keywords", "sourceScope", "dateScope"],
+  "outputs": ["exactMatches", "nearMatches", "sourceSpans", "missingTargets", "confidence"],
+  "rules": [
+    "Do not broaden the target silently.",
+    "Return no-match instead of guessing.",
+    "Keep exact quotations short and linked to their source location."
+  ]
+}

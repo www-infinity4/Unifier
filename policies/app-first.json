@@ -1,0 +1,22 @@
+{
+  "id": "infinity-app-first-v1",
+  "name": "Every product behaves as an app",
+  "status": "required",
+  "principle": "Phone interaction is the primary product behavior, not a reduced desktop webpage.",
+  "requiredChecks": {
+    "phoneViewport": "Core content and actions fit common narrow phone viewports without sideways scrolling.",
+    "touchTargets": "Primary controls are comfortably usable by touch and do not overlap.",
+    "safeAreas": "Fixed controls respect screen cutouts, browser chrome, and device safe areas.",
+    "keyboardOpen": "Forms remain usable when the software keyboard covers part of the screen.",
+    "backNavigation": "Back navigation closes the current layer or returns predictably without losing work.",
+    "stateRestoration": "Reload, backgrounding, and return preserve appropriate user state.",
+    "loadingAndOffline": "Loading, failure, retry, and offline states explain what is happening and preserve input.",
+    "portraitAndLandscape": "Core actions remain available in portrait and landscape."
+  },
+  "releaseRule": "A failed required check creates an error-memory case and blocks production-ready status.",
+  "automation": {
+    "mayPrepareRepairBranch": true,
+    "mayOpenDraftPullRequest": true,
+    "mayMergeWithoutApproval": false
+  }
+}
