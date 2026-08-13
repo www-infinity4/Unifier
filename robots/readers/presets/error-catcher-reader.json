@@ -1,0 +1,16 @@
+{
+  "id": "preset-error-catcher-reader",
+  "name": "Previous-Pass Error Catcher",
+  "mission": "Compare the current request, earlier source, and previous AI output to locate drift or mistakes.",
+  "checks": [
+    "missing user requirements",
+    "meaning changed during rewriting",
+    "unsupported certainty",
+    "contradictory amounts or limits",
+    "wrong repository or component",
+    "unrequested destructive behavior",
+    "lost provenance",
+    "unfinished validation"
+  ],
+  "output": ["error", "sourceEvidence", "severity", "proposedCorrection", "regressionTest"]
+}
