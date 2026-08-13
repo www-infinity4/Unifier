@@ -13,6 +13,8 @@ Unifier is the control plane that connects active Infinity repositories without 
 - A truthful proposed-reserved ledger record for the 50,000,000 Infinity China robot-factory project.
 - An AI Error Memory that retrieves similar failures, diagnoses repeated corrections, and prepares cross-repository repair notifications.
 - A required app-first release policy for phone interaction.
+- An uncapped paginated repository inventory scanner, tested beyond GitHub's 100-result page size.
+- A commit-condition scanner that records why a commit existed and detects repeated conditions.
 
 ## Operating loop
 
@@ -51,6 +53,14 @@ Each chat session can grow into a robot. The initial robot may read, research, d
 Unifier should discover repositories through an authorized GitHub installation and read an `infinity-project.manifest.json` from each one. It then sends build jobs to the owning repository by branch and draft pull request. It does not copy private material, credentials, or entire repositories into a central prompt.
 
 The next production slice is a repository inventory adapter, manifest schema, persistent job store, model adapter, and dashboard showing conversations, reader findings, build jobs, approvals, and ledger state.
+
+## Repository and commit scanners
+
+The inventory scanner requests at most 100 repositories per provider page, then continues page by page until the provider returns a short page or explicitly reports that no next page exists. It deduplicates by full repository name and has no configured total-repository limit. The connected `www-infinity4` inventory contained 176 repositories when this slice was built: 100 on page one and 76 on page two.
+
+Every active repository receives jobs for its manifest, app-first behavior, matching Error Memory cases, commit conditions, and research-evidence state. Names and metadata can identify a repository as science or prototyping work, but that classification never marks its scientific claims as verified.
+
+The commit-condition scanner recognizes structured `Infinity-Condition`, `Infinity-Expected`, `Infinity-Actual`, `Infinity-Reason`, `Infinity-Component`, `Infinity-Error`, and `Infinity-Test` trailers. Older commits without these records are assigned low confidence and a context-recovery notification. When the same conditional signature appears in later commits, the scanner requires root-cause review and a regression test rather than authorizing another blind patch.
 
 ## Run the tests
 
