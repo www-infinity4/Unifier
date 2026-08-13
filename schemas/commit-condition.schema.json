@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infinity.example/schemas/commit-condition.schema.json",
+  "title": "Infinity Commit Condition Record",
+  "type": "object",
+  "required": ["schemaVersion", "repository", "commit", "component", "condition", "conditionalReason", "source", "confidence", "conditionSignature", "missing"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "repository": {"type": "string"},
+    "commit": {"type": "string"},
+    "component": {"type": "string"},
+    "condition": {"type": "string"},
+    "expected": {"type": ["string", "null"]},
+    "actual": {"type": ["string", "null"]},
+    "conditionalReason": {"type": "string"},
+    "errorId": {"type": ["string", "null"]},
+    "regressionTest": {"type": ["string", "null"]},
+    "source": {"enum": ["declared-commit-trailers", "inferred-from-commit"]},
+    "confidence": {"enum": ["low", "medium", "high"]},
+    "conditionSignature": {"type": "string"},
+    "missing": {"type": "array", "items": {"type": "string"}},
+    "files": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
