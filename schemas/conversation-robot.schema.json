@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infinity.example/schemas/conversation-robot.schema.json",
+  "title": "Infinity Conversation Robot",
+  "type": "object",
+  "required": ["schemaVersion", "id", "kind", "mission", "permissions", "input", "claims", "history"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "id": {"type": "string", "pattern": "^conversation-[a-f0-9]{16}$"},
+    "kind": {"const": "conversation-robot"},
+    "mission": {"type": "string"},
+    "permissions": {
+      "type": "object",
+      "required": ["mayRead", "mayResearch", "mayDraft", "mayMerge", "maySpend", "mayControlPhysicalActuator"]
+    },
+    "input": {"type": "object", "required": ["text"]},
+    "claims": {"type": "array"},
+    "findings": {"type": "array"},
+    "buildJobs": {"type": "array"},
+    "history": {"type": "array"}
+  },
+  "additionalProperties": true
+}
