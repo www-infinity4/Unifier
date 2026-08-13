@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "passes": [
+    {"id": "quick-writer", "purpose": "Capture the idea immediately without losing its voice or details."},
+    {"id": "data-writer", "purpose": "Structure names, numbers, requirements, relationships, and missing fields."},
+    {"id": "research-writer", "purpose": "Add primary evidence, counterevidence, tests, uncertainty, and citations."},
+    {"id": "infinity-writer", "purpose": "Connect the work to Infinity projects, policy, provenance, ledger, and production."},
+    {"id": "production-writer", "purpose": "Create code tasks, engineering specifications, BOMs, RFQs, tests, and release criteria."},
+    {"id": "sentinel-proofreader", "purpose": "Catch drift, unsupported claims, unsafe actions, and missing authorization."}
+  ],
+  "rule": "Every pass preserves the original input and emits a change record. No pass may erase an unresolved disagreement."
+}
